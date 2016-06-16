@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const config = require('./webpack.config');
 const open = require('open');
+var host = "lx.waimai.baidu.com:";
 
 new WebpackDevServer(webpack(config), config.devServer)
 .listen(config.port, 'localhost', (err) => {
@@ -13,5 +14,5 @@ new WebpackDevServer(webpack(config), config.devServer)
   }
   console.log('Listening at localhost:' + config.port);
   console.log('Opening your system browser...');
-  open('http://localhost:' + config.port + '/webpack-dev-server/');
+  open('http://' + host + config.port + '/webpack-dev-server/');
 });
